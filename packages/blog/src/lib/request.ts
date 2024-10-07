@@ -11,6 +11,7 @@ export const request = requestCreator({
   timeout: TIMEOUT.DEFAULT,
   withCredentials: true,
   requestInterceptors: [
+    // eslint-disable-next-line
     (config: AxiosRequestConfig) => {
       return {
         ...config,
@@ -24,6 +25,7 @@ export const request = requestCreator({
     (error: typeof Error) => Promise.reject(error),
   ],
   responseInterceptors: [
+    // eslint-disable-next-line
     (response: AxiosResponse) => {
       const { status } = response;
 
