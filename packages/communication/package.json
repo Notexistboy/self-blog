@@ -1,0 +1,23 @@
+{
+  "name": "@blog/communication",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "crawlingResource": "tsx ./implement.ts",
+    "overwriteDocument": "tsx ./modifyDescription.ts",
+    "build": "npm run crawlingResource && npm run overwriteDocument"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.8",
+    "dayjs": "^1.11.10",
+    "dotenv": "^16.4.5",
+    "fs-extra": "^11.2.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.7.1"
+  }
+}

@@ -1,0 +1,7 @@
+.ant-app {
+  display: flex;
+  flex-flow: row nowrap;
+  .content {
+    flex-grow: 1;
+  }
+}
