@@ -1,3 +1,4 @@
+/* eslint-disable */
 import mitt from 'mitt';
 
 type IUseEventbus = {
@@ -15,9 +16,7 @@ const onEvent = (eventName: symbol, callback: (val: any) => void) => {
   emitter.on(eventName, callback);
 };
 
-
 export const useEvent = (): IUseEventbus => {
-
   return {
     emitEvent,
     onEvent,

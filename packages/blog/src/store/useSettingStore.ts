@@ -13,9 +13,10 @@ const useSettingStore = create<SettingState>()(
     (set, get) => ({
       defaultLocale: get()?.defaultLocale ? get()?.defaultLocale : defaultLocale,
       locales: locales,
-      setDefaultLocale: (newVal) => set((state: any) => ({
-        defaultLocale: state.defaultLocale = newVal,
-      })),
+      setDefaultLocale: newVal =>
+        set((state: SettingState) => ({
+          defaultLocale: (state.defaultLocale = newVal),
+        })),
     }),
     {
       name: 'setting',

@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 const Statistics = dynamicNext(() => import('./statistics'), { ssr: false });
 const AssetsWatch = dynamicNext(() => import('./assetsWatch'), { ssr: false });
 
-export default function RootLayout({ children, ...otherProps }: { children: React.ReactNode; otherProps: any }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="zh">
       <head></head>

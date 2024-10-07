@@ -1,12 +1,11 @@
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
 
-
 // Custom types for theme
 
 interface AuthState {
   isAuthenticated: boolean;
-  user: any;
+  user: Record<string, string> | null;
   token: null | string;
   login: (email: string, password: string) => Promise<void>;
   register: (userInfo: FormData) => Promise<void>;
@@ -16,13 +15,14 @@ interface AuthState {
 
 const useAuthStore = create<AuthState>()(
   persist(
-    (set) => ({
+    set => ({
       isAuthenticated: false,
       user: null,
       token: null,
-      setToken: (newVal) => set((state: any) => ({
-        token: state.token = newVal,
-      })),
+      setToken: newVal =>
+        set((state: AuthState) => ({
+          token: (state.token = newVal),
+        })),
       login: async () => {
         // Login user code
       },

@@ -1,5 +1,6 @@
 import { StatusCodes } from 'http-status-codes';
 import { G, requestCreator } from '@siyuan0215/easier-axios-dsl';
+import type { AxiosRequestConfig, AxiosResponse } from 'axios';
 
 const TIMEOUT = {
   DEFAULT: 3 * 60000,
@@ -10,21 +11,21 @@ export const request = requestCreator({
   timeout: TIMEOUT.DEFAULT,
   withCredentials: true,
   requestInterceptors: [
-    config => {
+    (config: AxiosRequestConfig) => {
       return {
         ...config,
         timeout: TIMEOUT.UPLOADING,
         headers: {
-          ...config.headers,
+          ...(config.headers as Record<string, string>),
           authorization: '1',
         },
       };
     },
-    (error: any) => Promise.reject(error),
+    (error: typeof Error) => Promise.reject(error),
   ],
   responseInterceptors: [
-    response => {
-      const { data, status } = response;
+    (response: AxiosResponse) => {
+      const { status } = response;
 
       if (status === StatusCodes.OK) {
         return response;

@@ -1,6 +1,7 @@
 'use client';
 import React, { createContext, Dispatch, SetStateAction, useContext, useState } from 'react';
 
+// eslint-disable-next-line
 const createCtx = <T extends any>(initial_value?: T) => {
   const storeContext = createContext<T>(null!);
   const dispatchContext = createContext<Dispatch<SetStateAction<T>>>(null!);

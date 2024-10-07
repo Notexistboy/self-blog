@@ -1,10 +1,8 @@
 import './index.scss';
-import { Button } from 'antd';
-
 // import { useState } from "react";
 
 export default function Introduce() {
-  const { NEXT_PUBLIC_GITHUB_REPOSITORY } = process.env;
+  // const { NEXT_PUBLIC_GITHUB_REPOSITORY } = process.env;
   // console.log('data', data);
   return (
     <div className="introduce">

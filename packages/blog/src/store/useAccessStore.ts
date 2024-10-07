@@ -2,21 +2,22 @@ import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
 
 type AccessesState = {
-  canAccessSystem: boolean
+  canAccessSystem: boolean;
   setAccess: (newVal: string) => void;
-}
+};
 
 export function containsAny(arr1: string[], arr2: string[]): boolean {
-  return arr1.some((r) => arr2.includes(r));
+  return arr1.some(r => arr2.includes(r));
 }
 
 const useAccessStore = create<AccessesState>()(
   persist(
-    (set) => ({
+    set => ({
       canAccessSystem: true,
-      setAccess: (newVal: any) => set((state: any) => ({
-        canAccessSystem: state.canAccessSystem = containsAny([newVal], ['canAccessSystem']),
-      })),
+      setAccess: (newVal: string) =>
+        set((state: AccessesState) => ({
+          canAccessSystem: (state.canAccessSystem = containsAny([newVal], ['canAccessSystem'])),
+        })),
     }),
     {
       name: 'access',

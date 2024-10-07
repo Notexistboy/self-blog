@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export const Share = () => {
   return (
     <div>
@@ -22,8 +24,9 @@ export const Share = () => {
             <a href="javascript:;" aria-haspopup="true" aria-expanded="false" />
             <div uk-drop="pos: top-center">
               <div>
-                <img
+                <Image
                   src="https://zbl.cc/wp-content/plugins/capsule-qzhai/extend/share/qrCode.php?data=https%3A%2F%2Fzbl.cc%2F1858.html"
+                  alt="https://zbl.cc/wp-content/plugins/capsule-qzhai/extend/share/qrCode.php?data=https%3A%2F%2Fzbl.cc%2F1858.html"
                   ul-img=""
                 />
               </div>
