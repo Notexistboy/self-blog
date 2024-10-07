@@ -38,4 +38,4 @@ export const request = requestCreator({
   ],
 });
 
-export const generatorAPIS = <T extends {}>(apiConfig: T) => G<T>(request, apiConfig);
+export const generatorAPIS = <T extends Record<string, string>>(apiConfig: T) => G<T>(request, apiConfig);
