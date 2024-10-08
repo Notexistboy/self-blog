@@ -215,7 +215,7 @@ packages:
       react: '>=16.0.0'
       react-dom: '>=16.0.0'
 
-  '@ant-design/nextjs-registry@1.0.1':
+  /@ant-design/nextjs-registry@1.0.1(@ant-design/cssinjs@1.18.0-alpha.0)(antd@5.21.2)(next@14.0.2)(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-DaMJ1nClR1a4UfG7vXkDj89z1eARhSDgqvHoxfM0Yco1MZEbaqRj4o+bQToHb3gMb6gbFlrZ51nOBGh5xSJ7EQ==}
     peerDependencies:
       '@ant-design/cssinjs': ^1.18.2
@@ -223,6 +223,13 @@ packages:
       next: ^14.0.0
       react: '>=16.0.0'
       react-dom: '>=16.0.0'
+    dependencies:
+      '@ant-design/cssinjs': 1.18.0-alpha.0(react-dom@18.3.1)(react@18.3.1)
+      antd: 5.21.2(react-dom@18.3.1)(react@18.3.1)
+      next: 14.0.2(react-dom@18.3.1)(react@18.3.1)(sass@1.79.4)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+    dev: false
 
   '@ant-design/react-slick@1.1.2':
     resolution: {integrity: sha512-EzlvzE6xQUBrZuuhSAFTdsr4P2bBBHGZwKFemEfq8gIGyIQCxalYfZW/T2ORbtQx5rU69o+WycP3exY/7T1hGA==}
