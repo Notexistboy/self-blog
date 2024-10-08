@@ -14,7 +14,9 @@ interface Props {
   searchParams: Record<string, string>;
 }
 
-export function generateStaticParams(): Params[] {
+export const dynamicParams = true;
+
+export function generateStaticParams() {
   // 把所有可能的结果都返回出来
   const length = Math.ceil(data.issuesData.length / PAGETOTAL);
   return Array.from({ length: length }).map((_, index) => {

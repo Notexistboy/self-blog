@@ -25,7 +25,9 @@ export async function generateMetadata({
   };
 }
 
-export function generateStaticParams(): Params[] {
+export const dynamicParams = true;
+
+export function generateStaticParams() {
   const result: Params[] = [];
   classification.forEach((value, key) => {
     result.push({

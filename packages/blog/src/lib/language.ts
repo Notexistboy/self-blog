@@ -2,10 +2,6 @@ import { createLocalizedPathnamesNavigation } from 'next-intl/navigation';
 import { locales } from '@/static/locales';
 import { staticRouter } from '@/static/staticRouter';
 
-export function generateStaticParams() {
-  return ['en', 'zh'].map(locale => ({ locale }));
-}
-
 export const localePrefix = undefined;
 export const pathnames = {} as Record<string, string>;
 

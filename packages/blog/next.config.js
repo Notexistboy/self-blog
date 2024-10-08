@@ -11,7 +11,8 @@ process.env['NEXT_PUBLIC_GITHUB_REPOSITORY'] = GITHUB_REPOSITORY;
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: ['dev', 'build'].includes(argv) ? 'export' : undefined,
+  // output: ['dev', 'build'].includes(argv) ? 'export' : undefined,
+  output: 'export',
   experimental: {
     webpackBuildWorker: true,
   },

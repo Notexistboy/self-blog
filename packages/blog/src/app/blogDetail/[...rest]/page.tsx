@@ -35,6 +35,8 @@ export async function generateMetadata({
   };
 }
 
+export const dynamicParams = true;
+
 export function generateStaticParams() {
   // 返回两次即可
   const result: Params[] = [];
