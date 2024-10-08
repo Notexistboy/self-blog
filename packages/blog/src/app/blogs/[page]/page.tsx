@@ -14,7 +14,7 @@ interface Props {
   searchParams: Record<string, string>;
 }
 
-export const dynamicParams = true;
+// export const dynamicParams = true;
 
 export function generateStaticParams() {
   // 把所有可能的结果都返回出来

@@ -25,7 +25,7 @@ export async function generateMetadata({
   };
 }
 
-export const dynamicParams = true;
+// export const dynamicParams = true;
 
 export function generateStaticParams() {
   const result: Params[] = [];
