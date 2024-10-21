@@ -18,7 +18,7 @@ export const Item: FC<Props> = ({ body, s, labels: type, updated_at, id, jumpPat
   const text = mdToText(body || '');
   const imgAll = extractImgTags(body || '');
 
-  const time = dayjs(updated_at).format('YYYY-MM-DD');
+  const time = dayjs(updated_at || '').format('YYYY-MM-DD');
 
   const content = useMemo(() => {
     const total = imgAll.length <= 1 ? 100 : 70;

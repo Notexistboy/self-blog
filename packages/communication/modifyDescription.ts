@@ -42,7 +42,7 @@ const Description = () => {
     data.user.GITHUB_REPOSITORY
   }/issues) 留言，如果对你有帮助可以点一下 \`Star\`，这也是对作者的一点支持。
 
-> 为了阅读体验更好，可以点击进入 [个人网站](https://notexistboy.github.io/blogs/1) 阅读。
+> 为了阅读体验更好，可以点击进入 [个人网站](https://notexistboy.github.io/self-blog) 阅读。
 > 文章总数：${total}，最后更新时间：${dayjs().format('YYYY-MM-DD')} 
 
 ${content}
