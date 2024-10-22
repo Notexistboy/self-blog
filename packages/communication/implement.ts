@@ -59,6 +59,7 @@ const continued = async <T extends (page?: number) => Promise<unknown[]>>(fn: T,
       { spaces: 2 },
     );
   } catch (e) {
+    console.log('error', e);
     console.log(e instanceof Error ? e.message : e);
   }
   console.timeEnd(`Start crawling the required data...`);
