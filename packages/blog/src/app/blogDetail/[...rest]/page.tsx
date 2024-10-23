@@ -102,7 +102,7 @@ export default function Page({
               <div uk-grid="">
                 <div>
                   {classifiedData.first && (
-                    <Link href={'/details/' + [classifiedData.first.id, typeId].filter(f => f).join('/')}>
+                    <Link href={'/blogDetail/' + [classifiedData.first.id, typeId].filter(f => f).join('/')}>
                       <span>上一篇</span>
                       <div>{classifiedData.first.title}</div>
                     </Link>
@@ -110,7 +110,7 @@ export default function Page({
                 </div>
                 <div>
                   {classifiedData.last && (
-                    <Link href={'/details/' + [classifiedData.last.id, typeId].filter(f => f).join('/')}>
+                    <Link href={'/blogDetail/' + [classifiedData.last.id, typeId].filter(f => f).join('/')}>
                       <span>下一篇</span>
                       <div>{classifiedData.last.title}</div>
                     </Link>

@@ -19,7 +19,7 @@ const menu = [
   {
     url: '/blogs/1',
     pharma: /blogs\/\d+/,
-    title: '随记',
+    title: '文章',
   },
 ];
 
@@ -95,7 +95,7 @@ export default function LeftSide() {
                   );
                 })}
               </ul>
-              <form method="get" action={`${process.env.NEXT_PUBLIC_BASE_PATH}/page/1`}>
+              <form method="get" action={`${process.env.NEXT_PUBLIC_BASE_PATH}/blogs/1`}>
                 <Input type="search" name="s" placeholder="搜索" defaultValue="" />
               </form>
             </div>

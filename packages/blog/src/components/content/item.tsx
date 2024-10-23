@@ -28,7 +28,7 @@ export const Item: FC<Props> = ({ body, s, labels: type, updated_at, id, jumpPat
 
   const path = useMemo(() => {
     if (!jumpPath) {
-      return `/details/${id}`;
+      return `/blogDetail/${id}`;
     }
     return jumpPath.replace(/<ARTICLE_ID>/g, `${id}`);
   }, [id, jumpPath]);
@@ -96,7 +96,7 @@ export const Item: FC<Props> = ({ body, s, labels: type, updated_at, id, jumpPat
         </div>
         <div>
           <Link
-            href={`/details/${id}`}
+            href={`/blogDetail/${id}`}
             style={{
               display: 'flex',
               justifyContent: 'center',
@@ -132,7 +132,7 @@ export const Item: FC<Props> = ({ body, s, labels: type, updated_at, id, jumpPat
           {imgAll.slice(0, 3).map((item, index) => {
             return (
               <div className={!index ? 'uk-first-column' : ''} key={item + index}>
-                <Link href={`/details/${id}`} uk-img="">
+                <Link href={`/blogDetail/${id}`} uk-img="">
                   <Image
                     width={200}
                     data-img={item}

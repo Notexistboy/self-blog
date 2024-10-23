@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo } from "react";
 import data, { classification } from '@blog/communication';
 import NotFound from './not-found';
 import { Content } from '@/components/content';
@@ -18,16 +18,14 @@ export async function generateMetadata({
     rest: [id],
   },
 }: Props) {
-  const current = data.label.find(f => f.id === +id);
+  const current = data.label.find((f) => f.id === +id);
 
   return {
     title: current?.name,
   };
 }
 
-// export const dynamicParams = true;
-
-export function generateStaticParams() {
+export function generateStaticParams(): Params[] {
   const result: Params[] = [];
   classification.forEach((value, key) => {
     result.push({
@@ -46,15 +44,18 @@ export function generateStaticParams() {
 
 export default function Page({
   params: {
-    rest: [id, page = '1'],
+    rest: [id, page = "1"],
   },
 }: Props) {
   const current = useMemo(() => {
-    return data.label.find(f => f.id === +id);
+    return data.label.find((f) => f.id === +id);
   }, [id]);
 
   const currentData = useMemo(() => {
-    return Array.from(classification.get(id) || []).slice((+page - 1) * PAGETOTAL, +page * PAGETOTAL);
+    return Array.from(classification.get(id) || []).slice(
+      (+page - 1) * PAGETOTAL,
+      +page * PAGETOTAL
+    );
   }, [id, page]);
 
   const length = useMemo(() => {

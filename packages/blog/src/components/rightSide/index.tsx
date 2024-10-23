@@ -32,7 +32,7 @@ export default function RightSide() {
                 {recnetly.map(item => {
                   return (
                     <li key={item.id}>
-                      <Link href={`/details/${item.id}`}>{item.title}</Link>
+                      <Link href={`/blogDetail/${item.id}`}>{item.title}</Link>
                     </li>
                   );
                 })}
