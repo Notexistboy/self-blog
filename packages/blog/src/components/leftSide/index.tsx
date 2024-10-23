@@ -47,63 +47,47 @@ export default function LeftSide() {
         open={unfold}
         footer={null}
         title={null}
-        styles={{
-          body: {
-            padding: '12px',
-          },
-        }}>
-        <div>
-          <div style={{ width: '180px' }}>
-            <div>
-              <div>
-                <Link href="/">
-                  <Image alt="user" width={100} height={100} src={data?.user?.avatar_url} />
-                </Link>
-                <h1>
-                  <Link href="/"> {data?.user?.name} </Link>
-                </h1>
-                <p>{data?.user?.bio}</p>
-              </div>
-              <ul>
-                {iconLists.map(item => {
-                  return (
-                    <li key={item.url}>
-                      <a href={item.url} target="_blank" title={item.alt}>
-                        <Image alt="" src={item.icon} width={20} height={20}></Image>
-                      </a>
-                    </li>
-                  );
-                })}
-              </ul>
-              <ul>
-                {menu.map(item => {
-                  return (
-                    <li
-                      key={item.title}
-                      className={
-                        [item.url, item.pharma].find(f => {
-                          if (f instanceof RegExp) {
-                            return f.test(pathname);
-                          }
-                          return f === pathname;
-                        })
-                          ? ''
-                          : ''
-                      }>
-                      <Link href={item.url}>{item.title}</Link>
-                    </li>
-                  );
-                })}
-              </ul>
-              <form method="get" action={`${process.env.NEXT_PUBLIC_BASE_PATH}/blogs/1`}>
-                <Input type="search" name="s" placeholder="搜索" defaultValue="" />
-              </form>
-            </div>
-            <a href={`https://github.com/${NEXT_PUBLIC_GITHUB_REPOSITORY}`} target="_blank">
-              {NEXT_PUBLIC_GITHUB_REPOSITORY}
-            </a>
+        >
+          <div className='sider-drawer-pic'>
+            <Link href="/">
+              <Image alt="user" width={100} height={100} src={data?.user?.avatar_url} />
+            </Link>
+            <p>{data?.user?.login}</p>
           </div>
-        </div>
+          <div className='sider-drawer-icon'>
+            {iconLists.map(item => {
+              return (
+                <div key={item.url}>
+                  <a href={item.url} target="_blank" title={item.alt}>
+                    <Image alt="" src={item.icon} width={20} height={20}></Image>
+                  </a>
+                </div>
+              );
+            })}
+          </div>
+          <div className='sider-drawer-menu'>
+            {menu.map(item => {
+              return (
+                <div
+                  key={item.title}
+                  className={
+                    [item.url, item.pharma].find(f => {
+                      if (f instanceof RegExp) {
+                        return f.test(pathname);
+                      }
+                      return f === pathname;
+                    })
+                      ? ''
+                      : ''
+                  }>
+                  <Link href={item.url}>{item.title}</Link>
+                </div>
+              );
+            })}
+          </div>
+          <form method="get" action={`${process.env.NEXT_PUBLIC_BASE_PATH}/blogs/1`}>
+            <Input type="search" name="s" placeholder="搜索" defaultValue="" />
+          </form>
       </Drawer>
     </div>
   );
